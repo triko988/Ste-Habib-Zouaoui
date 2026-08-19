@@ -1,0 +1,598 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ste Habib Zouaoui — ورشة إصلاح السيارات بصفاقس</title>
+<meta name="description" content="Ste Habib Zouaoui — ورشة إصلاح وصيانة السيارات في صفاقس. فرامل، تغيير زيت وفلاتر وصيانة السيارات.">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" href="images/atelier.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#080b0f;--panel:#10161d;--panel2:#151c24;--text:#f5f7fa;--muted:#9da8b4;--line:rgba(255,255,255,.11);--red:#e53935;--orange:#ff7a18;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:100;background:rgba(8,11,15,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:22px}
+.logo-mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--red),var(--orange));display:grid;place-items:center;font-size:21px}
+.navlinks{display:flex;gap:25px;font-size:13px;color:#c8d0d8}
+.navlinks a:hover{color:#fff}
+.nav-cta{background:var(--red);padding:10px 18px;border-radius:9px;font-size:13px;font-weight:700}
+
+.hero{min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;padding:72px 0}
+.eyebrow{color:#ff8a45;font-size:12px;font-weight:800;letter-spacing:.12em;margin-bottom:14px}
+.hero h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(54px,7vw,88px);line-height:.98;text-transform:uppercase;letter-spacing:.01em}
+.hero h1 span{color:var(--red)}
+.hero p{color:var(--muted);max-width:620px;margin:24px 0;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 20px;border-radius:9px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:linear-gradient(135deg,var(--red),#bd211e);color:white}
+.btn-outline{border:1px solid var(--line);background:#10161d}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.02)}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:11px;color:var(--muted)}
+
+.hero-img{height:500px;border-radius:22px;overflow:hidden;border:1px solid var(--line);position:relative;background:#151b22}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.8))}
+.hero-caption{position:absolute;bottom:22px;right:22px;left:22px;z-index:2}
+.hero-caption b{font-size:20px}
+.hero-caption p{margin:4px 0 0;color:#d9dfe5;font-size:12px}
+
+.section{padding:90px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+.section-head h2{font-family:"Barlow Condensed";font-size:48px;text-transform:uppercase;line-height:1}
+.section-head p{color:var(--muted);max-width:450px;font-size:13px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.service{background:var(--panel);border:1px solid var(--line);padding:25px;border-radius:15px;transition:.25s}
+.service:hover{transform:translateY(-5px);border-color:rgba(229,57,53,.5)}
+.icon{width:48px;height:48px;border-radius:12px;background:rgba(229,57,53,.12);display:grid;place-items:center;font-size:23px;margin-bottom:18px}
+.service h3{font-size:18px;margin-bottom:8px}
+.service p{color:var(--muted);font-size:12px}
+
+.dark-band{background:#0d1218;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.feature{padding:25px;border-left:1px solid var(--line)}
+.feature:first-child{border-left:0}
+.feature b{display:block;margin-bottom:6px}
+.feature span{font-size:12px;color:var(--muted)}
+
+.gallery{display:grid;grid-template-columns:1.35fr .8fr .8fr;grid-template-rows:240px 240px;gap:12px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.gallery img:first-child{grid-row:1/3}
+.credit{font-size:10px;color:#69737e;margin-top:10px}
+.credit a{text-decoration:underline}
+
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{position:relative;padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.step .num{font-family:"Barlow Condensed";font-size:40px;color:var(--red);line-height:1}
+.step h3{margin:12px 0 6px;font-size:17px}
+.step p{color:var(--muted);font-size:12px}
+
+.booking{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;background:linear-gradient(135deg,#151c24,#0e1319);border:1px solid var(--line);border-radius:20px;padding:32px}
+.booking h2{font-family:"Barlow Condensed";font-size:50px;line-height:1}
+.booking p{color:var(--muted);font-size:13px;margin:15px 0}
+.contact-list{display:grid;gap:9px;font-size:13px}
+.contact-list a:hover{color:#ff8a45}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form input,.form select,.form textarea{width:100%;background:#080b0f;border:1px solid var(--line);color:#fff;padding:13px;border-radius:9px;font:inherit;font-size:12px}
+.form textarea{min-height:110px;grid-column:1/-1;resize:vertical}
+.form button{border:0;cursor:pointer;grid-column:1/-1}
+.success{display:none;margin-top:10px;padding:10px;border-radius:8px;background:rgba(46,125,50,.15);color:#8fe09a;font-size:12px}
+
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.faq summary{cursor:pointer;font-weight:700;font-size:13px}
+.faq p{color:var(--muted);font-size:12px;margin-top:10px}
+
+footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted);font-size:12px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.footer-brand{color:#fff;font-size:20px;font-weight:800}
+
+.float{position:fixed;left:20px;bottom:20px;z-index:200;display:flex;gap:8px}
+.float a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--red);box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:20px}
+.float a.map{background:#222a33}
+
+@media(max-width:900px){
+  .navlinks{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:390px}
+  .services{grid-template-columns:1fr 1fr}
+  .features{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px}
+  .gallery img:first-child{grid-row:auto;grid-column:1/-1}
+  .process{grid-template-columns:1fr 1fr}
+  .booking{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+}
+
+@media(max-width:560px){
+  .wrap{padding:0 16px}
+  .hero{padding:48px 0}
+  .hero h1{font-size:58px}
+  .stats{grid-template-columns:1fr}
+  .services,.features,.process{grid-template-columns:1fr}
+  .gallery{display:grid;grid-template-columns:1fr;grid-template-rows:250px 180px 180px}
+  .gallery img:first-child{grid-column:auto}
+  .form{grid-template-columns:1fr}
+  .form textarea,.form button{grid-column:auto}
+  .section{padding:65px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home">
+      <span class="logo-mark">⚙</span>
+      <span>Ste Habib Zouaoui</span>
+    </a>
+
+    <nav class="navlinks">
+      <a href="#services">الخدمات</a>
+      <a href="#gallery">المعرض</a>
+      <a href="#process">كيف نعمل</a>
+      <a href="#booking">موعد</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+
+    <a class="nav-cta" href="#booking">احجز موعد</a>
+  </div>
+</header>
+
+<main id="home">
+
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow">
+      ورشة إصلاح وصيانة السيارات — Route El Mahdia KM 3, Kassas El Haffara, Sfax, Tunisia
+    </div>
+
+    <h1>سيارتك.<br><span>ثقتك.</span><br>مسؤوليتنا.</h1>
+
+    <p>
+      Ste Habib Zouaoui متخصصة في إصلاح وصيانة السيارات بصفاقس،
+      مع خدمات الفرامل وتغيير زيت وفلاتر وصيانة السيارات.
+      احجز موعدك وتواصل معنا مباشرة.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#booking">📅 احجز موعدًا</a>
+      <a class="btn btn-outline" href="tel:+21695948044">☎ اتصل الآن</a>
+      <a class="btn btn-outline" target="_blank"
+         href="https://www.bing.com/maps/search?v=2&pc=FACEBK&mid=8100&mkt=fr-FR&q=Route+el+Mahdia+KM+3+kassas+el+haffara%2C+Sfax%2C+Tunisia&cp=34.739447~10.760398&lvl=20.6&style=r">
+        📍 موقعنا
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>01</b><span>تشخيص دقيق</span></div>
+      <div class="stat"><b>02</b><span>صيانة احترافية</span></div>
+      <div class="stat"><b>03</b><span>خدمة واضحة</span></div>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="images/atelier.jpg" alt="Ste Habib Zouaoui - ورشة السيارات في صفاقس">
+    <div class="hero-caption">
+      <b>مجهزون لخدمة سيارتك</b>
+      <p>ورشتنا في صفاقس</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-band" id="services">
+<div class="wrap">
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">SERVICES</div>
+      <h2>خدماتنا</h2>
+    </div>
+    <p>
+      مجموعة خدمات مناسبة لورشة إصلاح سيارات متعددة الخدمات،
+      ويمكن تعديلها حسب اختصاص ورشتك.
+    </p>
+  </div>
+
+  <div class="services">
+    <article class="service">
+      <div class="icon">🔧</div>
+      <h3>الميكانيك العامة</h3>
+      <p>صيانة وإصلاح المحرك، نظام التبريد، التعليق، التوجيه ومختلف الأعطال الميكانيكية.</p>
+    </article>
+
+    <article class="service">
+      <div class="icon">🖥️</div>
+      <h3>التشخيص الإلكتروني</h3>
+      <p>فحص أعطال الأنظمة الإلكترونية وقراءة رموز الأعطال وتشخيص المشكلة قبل الإصلاح.</p>
+    </article>
+
+    <article class="service">
+      <div class="icon">⚡</div>
+      <h3>كهرباء السيارات</h3>
+      <p>بطارية، دينامو، تشغيل، إنارة، حساسات ومشاكل الدوائر الكهربائية.</p>
+    </article>
+
+    <article class="service">
+      <div class="icon">🛞</div>
+      <h3>الفرامل والإطارات</h3>
+      <p>فحص الفرامل، الأقراص، البطانات، ضغط الإطارات والخدمات المرتبطة بالسلامة.</p>
+    </article>
+
+    <article class="service">
+      <div class="icon">❄️</div>
+      <h3>تكييف السيارة</h3>
+      <p>فحص نظام التكييف، التسريب، الضغط والأداء وإعادة الخدمة حسب حالة السيارة.</p>
+    </article>
+
+    <article class="service">
+      <div class="icon">🧰</div>
+      <h3>الصيانة الدورية</h3>
+      <p>زيوت وفلاتر وفحوصات دورية للمساعدة على الحفاظ على أداء السيارة.</p>
+    </article>
+  </div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+
+  <div class="features">
+    <div class="feature">
+      <b>تشخيص قبل الإصلاح</b>
+      <span>نبدأ بتحديد المشكلة قبل اقتراح العمل.</span>
+    </div>
+
+    <div class="feature">
+      <b>شرح واضح</b>
+      <span>نوضح للعميل ما يحتاجه وما يمكن تأجيله.</span>
+    </div>
+
+    <div class="feature">
+      <b>خدمة منظمة</b>
+      <span>موعد وبيانات السيارة في نموذج واحد.</span>
+    </div>
+
+    <div class="feature">
+      <b>صفاقس</b>
+      <span>موقع محلي سهل الوصول مع رابط مباشر للخرائط.</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section" id="gallery">
+<div class="wrap">
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">GALLERY</div>
+      <h2>صور الورشة</h2>
+    </div>
+
+    <p>
+      شاهد بعض الصور الحقيقية لورشة Ste Habib Zouaoui
+      والخدمات المتعلقة بالفرامل والصيانة.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/atelier.jpg" alt="Ste Habib Zouaoui - واجهة الورشة" title="Ste Habib Zouaoui">
+    <img src="images/frein.jpg" alt="خدمة إصلاح الفرامل">
+    <img src="images/interieur.jpg" alt="خدمة كهرباء وتجهيزات السيارات">
+    <img src="images/vidange.jpg" alt="قطع ومكونات السيارات - خدمة الصيانة">
+  </div>
+
+  <div class="credit">
+    صور حقيقية مقدمة من Ste Habib Zouaoui لاستخدامها في الموقع.
+  </div>
+
+</div>
+</section>
+
+<section class="section dark-band" id="process">
+<div class="wrap">
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">PROCESS</div>
+      <h2>كيف نعمل؟</h2>
+    </div>
+  </div>
+
+  <div class="process">
+    <div class="step">
+      <div class="num">01</div>
+      <h3>احجز</h3>
+      <p>أرسل بياناتك ونوع الخدمة المطلوبة.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">02</div>
+      <h3>افحص</h3>
+      <p>نحدد الأعراض ونفحص السيارة.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">03</div>
+      <h3>نصلح</h3>
+      <p>يتم تنفيذ العمل بعد الاتفاق مع العميل.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">04</div>
+      <h3>استلم</h3>
+      <p>تستلم السيارة مع توضيح الأعمال المنجزة.</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section" id="booking">
+<div class="wrap">
+
+  <div class="booking">
+
+    <div>
+      <div class="eyebrow">BOOKING</div>
+
+      <h2>
+        احجز موعدًا<br>
+        <span style="color:#e53935">لسيارتك</span>
+      </h2>
+
+      <p>
+        النموذج التالي جاهز. بعد إدخال بيانات ورشتك الحقيقية
+        يمكن ربطه بالبريد الإلكتروني أو WhatsApp أو نظام حجوزات.
+      </p>
+
+      <div class="contact-list">
+        <div>
+          📞 الهاتف:
+          <a href="tel:+21695948044">+216 95 948 044</a>
+        </div>
+
+        <div>
+          📍 العنوان:
+          Route El Mahdia KM 3, Kassas El Haffara, Sfax, Tunisia
+        </div>
+
+        <div>🕒 يوميًا: 08:00 — 17:00</div>
+      </div>
+    </div>
+
+    <form class="form" id="bookingForm">
+
+      <input required id="name" placeholder="الاسم الكامل">
+
+      <input required id="phone" placeholder="رقم الهاتف">
+
+      <input id="car" placeholder="نوع السيارة (مثال: Golf 7)">
+
+      <input id="year" placeholder="سنة الصنع">
+
+      <select id="service" required>
+        <option value="">اختر الخدمة</option>
+        <option>ميكانيك</option>
+        <option>تشخيص إلكتروني</option>
+        <option>كهرباء سيارات</option>
+        <option>فرامل</option>
+        <option>تكييف</option>
+        <option>صيانة دورية</option>
+        <option>أخرى</option>
+      </select>
+
+      <input type="date" id="date">
+
+      <textarea id="message" placeholder="اشرح المشكلة أو الأعراض"></textarea>
+
+      <button class="btn btn-primary" type="submit">
+        إرسال طلب الموعد
+      </button>
+
+      <div class="success" id="success">
+        تم تجهيز طلب الموعد.
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="wrap">
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">FAQ</div>
+      <h2>أسئلة شائعة</h2>
+    </div>
+  </div>
+
+  <div class="faq">
+
+    <details>
+      <summary>هل يمكن فحص السيارة قبل الإصلاح؟</summary>
+      <p>نعم، الموقع مصمم لعرض خدمة التشخيص أولًا ثم تحديد الإصلاح المناسب.</p>
+    </details>
+
+    <details>
+      <summary>هل أحتاج إلى موعد؟</summary>
+      <p>يفضل حجز موعد لتقليل وقت الانتظار، ويمكن تعديل النص حسب نظام ورشتك.</p>
+    </details>
+
+    <details>
+      <summary>هل تخدمون جميع أنواع السيارات؟</summary>
+      <p>
+        النص الافتراضي للموقع عام. يجب تعديل هذه المعلومة حسب السيارات
+        والعلامات التي تخدمها الورشة فعليًا.
+      </p>
+    </details>
+
+    <details>
+      <summary>هل يمكن إضافة WhatsApp؟</summary>
+      <p>
+        نعم. يمكن التواصل مباشرة عبر WhatsApp من الزر الموجود أسفل الموقع.
+      </p>
+    </details>
+
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<section class="section dark-band">
+
+<div class="wrap">
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">SOCIAL</div>
+      <h2>تابع الشركة</h2>
+    </div>
+
+    <p>
+      صفحة Facebook الرسمية يمكن ربطها مباشرة هنا عند توفر الرابط.
+    </p>
+  </div>
+
+  <div class="booking" style="grid-template-columns:1fr;gap:10px">
+
+    <div>
+      <b style="font-size:18px">Ste Habib Zouaoui</b>
+
+      <p style="margin:6px 0;color:#9da8b4">
+        Route El Mahdia KM 3, Kassas El Haffara, Sfax, Tunisia
+      </p>
+    </div>
+
+    <a class="btn btn-primary" href="#"
+       onclick="alert('أرسل رابط صفحة Facebook الرسمية لإضافة الزر المباشر.');return false;">
+      f صفحة Facebook
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="wrap footer-grid">
+
+  <div>
+    <div class="footer-brand">Ste Habib Zouaoui</div>
+    <div>ورشة إصلاح وصيانة السيارات — صفاقس</div>
+  </div>
+
+  <div>
+    © 2026 Ste Habib Zouaoui — جميع الحقوق محفوظة.
+  </div>
+
+</div>
+
+</footer>
+
+<!-- Floating Contact Buttons -->
+<div class="float">
+
+  <a href="tel:+21695948044" title="اتصال">☎</a>
+
+  <a target="_blank"
+     href="https://wa.me/21620948400"
+     title="WhatsApp">✆</a>
+
+  <a class="map"
+     target="_blank"
+     href="https://www.bing.com/maps/search?v=2&pc=FACEBK&mid=8100&mkt=fr-FR&q=Route+el+Mahdia+KM+3+kassas+el+haffara%2C+Sfax%2C+Tunisia&cp=34.739447~10.760398&lvl=20.6&style=r"
+     title="الخرائط">📍</a>
+
+</div>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+
+  e.preventDefault();
+
+  const msg =https://github.com/triko988/Ste-Habib-Zouaoui/blob/main/index.html
+`طلب موعد - Ste Habib Zouaoui
+
+الاسم: ${document.getElementById('name').value}
+الهاتف: ${document.getElementById('phone').value}
+السيارة: ${document.getElementById('car').value}
+السنة: ${document.getElementById('year').value}
+الخدمة: ${document.getElementById('service').value}
+التاريخ المطلوب: ${document.getElementById('date').value}
+المشكلة: ${document.getElementById('message').value}`;
+
+  document.getElementById('success').textContent =
+    'تم تجهيز طلب الموعد. سيتم فتح WhatsApp لإرساله إلى 20 948 400.';
+
+  document.getElementById('success').style.display = 'block';
+
+  window.open(
+    'https://wa.me/21620948400?text=' + encodeURIComponent(msg),
+    '_blank'
+  );
+
+});
+</script>
+
+<!-- n8n Chat Widget -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+
+<script type="module">
+
+import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+createChat({
+
+  webhookUrl:
+    'https://topadmin889.app.n8n.cloud/webhook/93d1d243-c5fc-4b65-a7dc-e5c75d9b90b0/chat',
+
+  initialMessages: [
+    'مرحبًا بك في Ste Habib Zouaoui! 👋',
+    'كيف يمكنني مساعدتك بخصوص سيارتك اليوم؟'
+  ],
+
+  i18n: {
+
+    en: {
+      title: 'Ste Habib Zouaoui',
+      subtitle: 'مساعد الورشة — نحن هنا لمساعدتك.',
+      inputPlaceholder: 'اكتب سؤالك...',
+      getStarted: 'محادثة جديدة',
+      footer: '',
+      closeButtonTooltip: 'إغلاق'
+    }
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
+```
