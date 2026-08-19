@@ -192,10 +192,22 @@ document.getElementById('bookingForm').addEventListener('submit',function(e){
 الخدمة: ${document.getElementById('service').value}
 التاريخ المطلوب: ${document.getElementById('date').value}
 المشكلة: ${document.getElementById('message').value}`;
+
   document.getElementById('success').textContent='تم تجهيز طلب الموعد. سيتم فتح WhatsApp لإرساله إلى 20 948 400.';
   document.getElementById('success').style.display='block';
   window.open('https://wa.me/21620948400?text='+encodeURIComponent(msg),'_blank');
 });
 </script>
+
+<!-- Floating Telegram Button -->
+<a href="https://t.me/fedi03_bot" target="_blank" rel="noopener"
+   style="position:fixed;bottom:90px;right:20px;z-index:9999;display:flex;
+          align-items:center;gap:8px;background:#229ED9;color:#fff;
+          padding:12px 18px;border-radius:30px;text-decoration:none;
+          font-family:sans-serif;font-weight:bold;
+          box-shadow:0 4px 12px rgba(0,0,0,.25);">
+  💬 دردش مع مساعدنا
+</a>
+
 </body>
 </html>
